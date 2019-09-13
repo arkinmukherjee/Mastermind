@@ -8,17 +8,13 @@ using namespace std;
 
 void run(){
 	code Key(5, 10);
-	int guess1[5] = { 5,0,3,2,6 };
+	int guess1[5] = { 7,0,3,2,6 };
 	code Guess(guess1);
+	cout << "\n" << Key.checkCorrect(Guess);
 }
 
 int main() {
 	//srand(time(NULL));
-
-
-	cout << "\n\n";
-
-	code Guesser(5, 10);
 
 	run();
 

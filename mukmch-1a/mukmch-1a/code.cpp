@@ -16,7 +16,7 @@ code::code(const int& n, const int& m) {
 }
 
 code::code(int guess[]) {
-	setGuess();
+	setGuess(guess);
 }
 
 // Generates random code based on inputs to object
@@ -25,6 +25,7 @@ void code::initRandom() {
 		secretCode[i] = rand() % maxValue;
 		cout << secretCode[i];
 	}
+	cout << endl;
 }
 
 const int code::checkCorrect(code &guess) { //TODO find out if const can be used
@@ -89,7 +90,12 @@ const vector<int> code::getCode() const {
 }
 
 void code::setGuess(int guess[]) {
+	cout << "Settting guess\n";
+	codeLength = sizeof(guess) / sizeof(*guess);
+	secretCode.resize(codeLength);
 	for (int i = 0; i < codeLength; i++) {
 		secretCode[i] = guess[i];
+		cout << secretCode[i];
 	}
+	cout << endl;
 }
