@@ -8,9 +8,10 @@ using namespace std;
 
 void run(){
 	code Key(5, 10);
-	int guess1[5] = { 7,0,3,2,6 };
-	code Guess(guess1);
-	cout << "\n" << Key.checkCorrect(Guess);
+	int guess1[5] = { 5,0,3,2,6 };
+	int length = sizeof(guess1) / sizeof(guess1[0]);
+	code Guess(guess1, length);
+	cout << "\n" << Key.checkIncorrect(Guess);
 }
 
 int main() {
