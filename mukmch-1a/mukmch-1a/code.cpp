@@ -84,4 +84,3 @@ const bool code::checkRange(const int &val1) {
 const vector<int> code::getCode() const {
 	return secretCode;
 }
-
