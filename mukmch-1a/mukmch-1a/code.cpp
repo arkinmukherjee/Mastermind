@@ -3,7 +3,6 @@
 #include "code.h"
 #include <vector>
 #include <iostream>
-#include <ctime>
 
 using namespace std;
 
@@ -19,7 +18,6 @@ code::code(const int& n, const int& m) {
 
 // Generates random code based on inputs to object
 void code::initRandom() {
-	srand(time(NULL));
 	for (int i = 0; i < codeLength; i++) {
 		secretCode[i] = rand() % maxValue;
 		cout << secretCode[i];
