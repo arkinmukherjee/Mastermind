@@ -7,9 +7,7 @@
 using namespace std;
 
 int main() {
-	srand(time(NULL));
-
-	code Coder(5, 10);
+	//srand(time(NULL));
 
 	cout << "\n\n";
 
