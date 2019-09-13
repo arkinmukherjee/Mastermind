@@ -8,7 +8,6 @@ class code {
 public:
 	code(const int& n, const int &m);
 	const int checkCorrect(code &guess);
-	void humanGuess(code& guess);
 	const int checkIncorrect(code &guess);
 	const vector<int> getCode() const;
 private:
