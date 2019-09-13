@@ -1,4 +1,4 @@
-// Main file
+// File to load Mastermind game
 #include <stdlib.h>
 #include "code.h"
 #include <iostream>
