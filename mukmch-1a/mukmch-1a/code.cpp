@@ -54,8 +54,7 @@ const int code::checkIncorrect(code &guess) { //TODO find out if const can be us
 	incorrectFlags.resize(secretCode.size(), false);
 
 	for (int i = 0; i < guessCode.size(); i++) {
-		for (int j = 0; j < guessCode.size(); i++) {
-			// TODO: fix secretCode below, it fails because first statement
+		for (int j = 0; j < guessCode.size(); j++) {
 			if (secretCode[i] == guessCode[j] && !incorrectFlags[i] && i != j) {
 				counterIncorrect++;
 				incorrectFlags[i] = true;
