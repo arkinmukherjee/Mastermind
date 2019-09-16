@@ -7,11 +7,11 @@ class code {
 
 public:
 	code(const int& n, const int &m);
-	code(int guess[], int length);
+	code(vector<int> guess);
 	const int checkCorrect(const code &guess);
 	const int checkIncorrect(const code &guess);
 	const vector<int> getCode() const;
-	void setGuess(int guess[], int length);
+	void setGuess(vector<int> guess);
 private:
 	void initRandom();
 	const bool checkSize(const int& guessSize);

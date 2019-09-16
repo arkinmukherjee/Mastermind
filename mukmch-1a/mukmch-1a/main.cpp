@@ -3,15 +3,16 @@
 #include "code.h"
 #include <iostream>
 #include <ctime>
+#include <vector>
 
 using namespace std;
 
 void run(){
 	code Key(5, 10);
-	int guess1[5] = { 5,0,3,2,6 };
+	vector<int> guess1 = { 1,7,0,9,4 };
 	int length = sizeof(guess1) / sizeof(guess1[0]);
-	code Guess(guess1, length);
-	cout << "\n" << Key.checkCorrect(Guess);
+	code Guess(guess1);
+	cout << "\n" << Key.checkIncorrect(Guess);
 }
 
 int main() {
