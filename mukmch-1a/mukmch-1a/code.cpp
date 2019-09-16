@@ -16,6 +16,7 @@ code::code(const int& n, const int& m) {
 }
 
 code::code(vector<int> guess) {
+	maxValue = 0; // Set default value
 	setGuess(guess);
 }
 
@@ -60,7 +61,7 @@ const int code::checkIncorrect(const code &guess) { //TODO find out if const can
 				incorrectFlags[i] = true;
 				break;
 			}
-			else if (secretCode[i] == guessCode[j] && i == j) {
+			else if (secretCode[i] == guessCode[j] && i == j && !incorrectFlags[i]) {
 				incorrectFlags[i] = true;
 				break;
 			}

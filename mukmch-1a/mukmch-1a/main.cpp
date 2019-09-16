@@ -8,11 +8,13 @@
 using namespace std;
 
 void run(){
-	code Key(5, 10);
-	vector<int> guess1 = { 1,7,0,9,4 };
-	int length = sizeof(guess1) / sizeof(guess1[0]);
+	vector<int> secret1 = {3, 2, 3, 3, 3};
+	//code Key(5, 10);
+	code Key(secret1);
+	vector<int> guess1 = {1, 3, 3, 4, 5};
 	code Guess(guess1);
-	cout << "\n" << Key.checkIncorrect(Guess);
+	cout << "\nCorrect: " << Key.checkCorrect(Guess);
+	cout << "\nIncorrect: " << Key.checkIncorrect(Guess);
 }
 
 int main() {
