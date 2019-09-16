@@ -8,8 +8,8 @@ class code {
 public:
 	code(const int& n, const int &m);
 	code(int guess[], int length);
-	const int checkCorrect(code &guess);
-	const int checkIncorrect(code &guess);
+	const int checkCorrect(const code &guess);
+	const int checkIncorrect(const code &guess);
 	const vector<int> getCode() const;
 	void setGuess(int guess[], int length);
 private:

@@ -28,7 +28,7 @@ void code::initRandom() {
 	cout << endl;
 }
 
-const int code::checkCorrect(code &guess) { //TODO find out if const can be used
+const int code::checkCorrect(const code &guess) { //TODO find out if const can be used
 	const vector<int> guessCode = guess.getCode();
 	int counterCorrect = 0;
 
@@ -42,7 +42,7 @@ const int code::checkCorrect(code &guess) { //TODO find out if const can be used
 	return counterCorrect;
 }
 
-const int code::checkIncorrect(code &guess) { //TODO find out if const can be used
+const int code::checkIncorrect(const code &guess) { //TODO find out if const can be used
 	const vector<int> guessCode = guess.getCode();
 
 	if (!checkSize(guessCode.size())) {
