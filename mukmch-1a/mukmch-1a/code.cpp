@@ -52,17 +52,21 @@ const int code::checkIncorrect(const code &guess) { //TODO find out if const can
 
 	int counterIncorrect = 0;
 	vector<bool> incorrectFlags;
+	vector<bool> guessDups;
 	incorrectFlags.resize(secretCode.size(), false);
+	guessDups.resize(secretCode.size(), false);
 
 	for (int i = 0; i < guessCode.size(); i++) {
 		for (int j = 0; j < guessCode.size(); j++) {
-			if (secretCode[i] == guessCode[j] && !incorrectFlags[i] && i != j) {
+			if (secretCode[i] == guessCode[j] &&  i != j && !incorrectFlags[i] && !guessDups[j]) {
 				counterIncorrect++;
 				incorrectFlags[i] = true;
+				guessDups[j] = true;
 				break;
 			}
-			else if (secretCode[i] == guessCode[j] && i == j && !incorrectFlags[i]) {
+			else if (secretCode[i] == guessCode[j] && i == j && !incorrectFlags[i] && !guessDups[j]) {
 				incorrectFlags[i] = true;
+				guessDups[j] = true;
 				break;
 			}
 		}
