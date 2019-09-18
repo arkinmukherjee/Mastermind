@@ -1,12 +1,16 @@
-// File to load Mastermind game
+// main file of Mastermind game
+
+//includes header files and libraries
 #include <stdlib.h>
 #include "code.h"
 #include <iostream>
 #include <ctime>
 #include <vector>
 
+//standard namespace
 using namespace std;
 
+//hardcodes the guesses and calls all the necessary functions to run the game 
 void run(){
 	vector<int> secret1 = {3, 2, 3, 3, 3};
 	//code Key(5, 10);
@@ -17,13 +21,14 @@ void run(){
 	cout << "\nIncorrect: " << Key.checkIncorrect(Guess);
 }
 
+
+//main function that calls the run function
 int main() {
 	//srand(time(NULL));
 
 	run();
 
 	//int i = Coder.checkCorrect(Guesser);
-	cout << "\n\nIt built";
 
 	return 0;
 }

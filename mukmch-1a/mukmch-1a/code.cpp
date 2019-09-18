@@ -1,13 +1,15 @@
-//this file contains the function imlementations that are declared in code.h
+// This file contains the function imlementations that are declared in code.h
 
+//includes header files and libraries
 #include "code.h"
 #include <vector>
 #include <iostream>
 
+//standard namespace
 using namespace std;
 
-
-// Initializes a code object
+// Input: const integer by reference for code length, const integer by reference for range of digits
+// Constructor that initializes a code object with a random code
 code::code(const int& n, const int& m) {
 	codeLength = n;
 	maxValue = m;
@@ -15,12 +17,15 @@ code::code(const int& n, const int& m) {
 	initRandom();
 }
 
+// Input: vector of integers for a guess
+// Constructor that initializes the code object with a guess
 code::code(vector<int> guess) {
 	maxValue = 0; // Set default value
 	setGuess(guess);
 }
-
-// Generates random code based on inputs to object
+// Input: none
+// Output: none
+// Generates random code with the defined length and range for an already initialized code object
 void code::initRandom() {
 	for (int i = 0; i < codeLength; i++) {
 		secretCode[i] = rand() % maxValue;
@@ -29,7 +34,10 @@ void code::initRandom() {
 	cout << endl;
 }
 
-const int code::checkCorrect(const code &guess) { //TODO find out if const can be used
+// Input: const code object by reference
+// Output: integer
+// Checks the number of values in the guess match with the secret code and in the right place 
+const int code::checkCorrect(const code &guess) {
 	const vector<int> guessCode = guess.getCode();
 	int counterCorrect = 0;
 
@@ -42,8 +50,10 @@ const int code::checkCorrect(const code &guess) { //TODO find out if const can b
 	}
 	return counterCorrect;
 }
-
-const int code::checkIncorrect(const code &guess) { //TODO find out if const can be used
+// Input: const code object by reference
+// Output: integer
+// Checks the number of values in the guess match with the secret code but are in the wrong place 
+const int code::checkIncorrect(const code &guess) {
 	const vector<int> guessCode = guess.getCode();
 
 	if (!checkSize(guessCode.size())) {
@@ -76,6 +86,9 @@ const int code::checkIncorrect(const code &guess) { //TODO find out if const can
 	
 }
 
+// Input: const int by reference of the guess size
+// Output: boolean 
+// Checks if the length of the guess matches the length of the secret code
 const bool code::checkSize(const int &guessSize) {
 	if (guessSize == secretCode.size()) {
 		return true;
@@ -85,6 +98,9 @@ const bool code::checkSize(const int &guessSize) {
 	}
 }
 
+// Input: const int by reference of the guess size
+// Output: boolean 
+// Checks if the range of the guess matches the range of the secret code
 const bool code::checkRange(const int &val1) {
 	if (val1 < maxValue){
 		return true;
@@ -94,10 +110,9 @@ const bool code::checkRange(const int &val1) {
 	}
 }
 
-const vector<int> code::getCode() const {
-	return secretCode;
-}
-
+// Input: vector
+// Output: none 
+// Sets the value of the guess in the code object
 void code::setGuess(vector<int> guess) {
 	cout << "Setting guess\n";
 	codeLength = guess.size();
