@@ -102,10 +102,10 @@ const bool code::checkSize(const int &guessSize) {
 // Output: boolean 
 // Checks if the range of the guess matches the range of the secret code
 const bool code::checkRange(const int &val1) {
-	if (val1 < maxValue){
+	if (val1 < maxValue) {
 		return true;
 	}
-	else{
+	else {
 		return false;
 	}
 }

@@ -25,10 +25,6 @@ void run(){
 //main function that calls the run function
 int main() {
 	//srand(time(NULL));
-
 	run();
-
-	//int i = Coder.checkCorrect(Guesser);
-
 	return 0;
 }
