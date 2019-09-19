@@ -24,7 +24,9 @@ public:
 
 	// Functions for accessing private members
 	// inline code to return the secretCode
-	const vector<int> getCode() const { return secretCode; }; 
+	const vector<int> getCode() const { return secretCode; };
+
+	void printCode();
 	
 	// Functions for setting private members
 	void setGuess(vector<int> guess);

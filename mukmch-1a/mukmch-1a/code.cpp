@@ -39,12 +39,12 @@ void code::initRandom()
 // Generates random code with the defined length and range for an already 
 // initialized code object
 {
+	cout << "Secret code: ";
 	for (int i = 0; i < codeLength; i++) 
 	{
 		secretCode[i] = rand() % maxValue;
-		cout << secretCode[i];
 	}
-	cout << endl;
+	printCode();
 } // end initRandom
 
 
@@ -158,15 +158,24 @@ void code::setGuess(vector<int> guess)
 // Output: none 
 // Sets the value of the guess in the code object
 {
-	cout << "Setting guess\n";
 	codeLength = guess.size();
 	secretCode.resize(codeLength);
 
 	for (int i = 0; i < codeLength; i++) 
 	{
 		secretCode[i] = guess[i];
-		cout << secretCode[i];
 	}
 
 	cout << endl;
 } // end setGuess
+
+void code::printCode()
+// Print code by looping through it
+{
+
+	for (int i = 0; i < codeLength; i++) 
+	{
+		cout << secretCode[i];
+	}
+	cout << endl;
+} // end printCode
