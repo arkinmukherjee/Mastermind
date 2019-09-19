@@ -23,7 +23,8 @@ public:
 	const int checkIncorrect(const code &guess);
 
 	// Functions for accessing private members
-	const vector<int> getCode() const { return secretCode; }; //inline code to return the secretCode
+	// inline code to return the secretCode
+	const vector<int> getCode() const { return secretCode; }; 
 	
 	// Functions for setting private members
 	void setGuess(vector<int> guess);
