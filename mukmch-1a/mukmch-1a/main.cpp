@@ -15,7 +15,7 @@
 using namespace std;
 
 void run()
-// Hardcodes the guesses and calls all the necessary functions to run the game 
+// Hardcodes the guesses and calls all the necessary functions to run the game
 {
 	// Declare random secret code
 	
