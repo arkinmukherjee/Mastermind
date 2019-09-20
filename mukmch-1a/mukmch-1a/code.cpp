@@ -94,7 +94,7 @@ const int code::checkIncorrect(const code &guess)
 	vector<bool> guessDups;
 	guessDups.resize(secretCode.size(), false);
 
-	// Loops through to check where both the value and positions match, so those 
+	// Loops through to check where both the value and positions match, so those
 	// places can be skipped during the incorrect checking
 	for (int i = 0; i < guessCode.size(); i++) {
 		for (int j = 0; j < guessCode.size(); j++)
