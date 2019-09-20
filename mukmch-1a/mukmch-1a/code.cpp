@@ -4,14 +4,13 @@
 // Project 1a
 // This file contains the function implementations that are declared in code.h
 
-//includes header files and libraries
+// Includes header files and libraries
 #include "code.h"
 #include <vector>
 #include <iostream>
 
-//standard namespace
+// Standard namespace
 using namespace std;
-
 
 code::code(const int& n, const int& m) 
 // Input: const integer by reference for code length, const integer by reference
@@ -22,7 +21,7 @@ code::code(const int& n, const int& m)
 	maxValue = m;
 	secretCode.resize(n);
 	initRandom();
-}
+} // end code
 
 
 code::code(vector<int> guess) 
@@ -31,7 +30,7 @@ code::code(vector<int> guess)
 {
 	maxValue = 0; // Set default value
 	setGuess(guess);
-}
+} // end code
 
 
 void code::initRandom() 
@@ -69,6 +68,7 @@ const int code::checkCorrect(const code &guess)
 	return counterCorrect;
 } // end checkCorrect
 
+
 const int code::checkIncorrect(const code &guess) 
 // Input: const code object by reference for guess to compare to
 // Output: integer of # of incorrect values
@@ -83,13 +83,16 @@ const int code::checkIncorrect(const code &guess)
 		return -1;
 	}
 
-	// Defines variables
+	// Defines variables and resizes vectors
 	int counterIncorrect = 0;
 	vector<bool> incorrectFlags;
 	incorrectFlags.resize(secretCode.size(), false);
 
 	vector<bool> matchingPositions;
 	matchingPositions.resize(secretCode.size(), false);
+
+	vector<bool> guessDups;
+	guessDups.resize(secretCode.size(), false);
 
 	// Loops through to check where both the value and positions match, so those 
 	// places can be skipped during the incorrect checking
@@ -117,17 +120,17 @@ const int code::checkIncorrect(const code &guess)
 			// For loop that loops through guess code, compares all guess values
 			// against selected secret code value
 			if (secretCode[i] == guessCode[j] &&  i != j && !incorrectFlags[i] 
-				&& !matchingPositions[j])
+				&& !matchingPositions[j] && !guessDups[j])
 			{
 				counterIncorrect++;
 				incorrectFlags[i] = true;
+				guessDups[j] = true;
 				break;
 			}
 		} // end for
 	} // end for
 
 	return counterIncorrect;
-	
 } // end checkIncorrect
 
 
@@ -178,8 +181,11 @@ void code::setGuess(vector<int> guess)
 	}
 } // end setGuess
 
+
 void code::printCode()
-// Print code by looping through it
+// Input: none
+// Output: none 
+// Prints code by looping through it
 {
 	for (int i = 0; i < codeLength; i++) 
 	{

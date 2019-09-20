@@ -18,15 +18,12 @@ void run()
 // Hardcodes the guesses and calls all the necessary functions to run the game 
 {
 	// Declare random secret code
-	//vector<int> codeKey = { 0, 0, 2, 2, 2 };
+	
 	code Key(5, 10);
-	//Key.setGuess(codeKey);
-
 	cout << "Secret code: ";
 	Key.printCode();
 
 	// Declare random guesses for project1a
-	// vector<int> guess1 = { 2, 2, 2, 1, 1 };
 	vector<int> guess1 = {5, 0, 3, 2, 6};
 	vector<int> guess2 = {2, 1, 2, 2, 2};
 	vector<int> guess3 = {1, 3, 3, 4, 5};
@@ -58,9 +55,9 @@ void run()
 
 
 int main() 
-// main function that calls the run function and seeds the random function
+// Main function that calls the run function and seeds the random function
 {
-	//srand(time(NULL));
+	srand(time(NULL));
 	run();
 	return 0;
 }

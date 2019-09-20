@@ -4,18 +4,18 @@
 // Project 1a
 // Header file for the declaration of the code class
 
-//libraries
+// Libraries
 #include <vector>
 
-//standard namespace
+// Standard namespace
 using namespace std;
 
-//declares the code class
+// Declares the code class
 class code {
 
-//public member prototype functions
+// Public member prototype functions
 public:
-	// constructors
+	// Constructors
 	code(const int& n, const int &m);
 	code(vector<int> guess);
 
@@ -24,15 +24,14 @@ public:
 	const int checkIncorrect(const code &guess);
 
 	// Functions for accessing private members
-	// inline code to return the secretCode
+	// Inline code to return the secretCode
 	const vector<int> getCode() const { return secretCode; };
-
 	void printCode();
 	
 	// Functions for setting private members
 	void setGuess(vector<int> guess);
 
-//private member prototype functions and variables
+// Private member prototype functions and variables
 private:
 	void initRandom();
 
@@ -40,7 +39,7 @@ private:
 	const bool checkSize(const int& guessSize);
 	const bool checkRange(const int& val1);
 
-	// private variables that maintain important states for code class
+	// Private variables that maintain important states for code class
 	vector<int> secretCode;
 	int codeLength;
 	int maxValue;
