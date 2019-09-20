@@ -1,6 +1,7 @@
 // code.cpp
 // Author: Blake McHale and Arkin Mukherjee
 // Date: 9/18/2019
+// Project 1a
 // This file contains the function implementations that are declared in code.h
 
 //includes header files and libraries
@@ -39,12 +40,10 @@ void code::initRandom()
 // Generates random code with the defined length and range for an already 
 // initialized code object
 {
-	cout << "Secret code: ";
 	for (int i = 0; i < codeLength; i++) 
 	{
 		secretCode[i] = rand() % maxValue;
 	}
-	printCode();
 } // end initRandom
 
 
@@ -78,40 +77,52 @@ const int code::checkIncorrect(const code &guess)
 {
 	const vector<int> guessCode = guess.getCode();
 
+	// Small error check for if the guess size does not match the code length
 	if (!checkSize(guessCode.size())) 
 	{
 		return -1;
 	}
 
+	// Defines variables
 	int counterIncorrect = 0;
 	vector<bool> incorrectFlags;
-	vector<bool> guessDups;
 	incorrectFlags.resize(secretCode.size(), false);
-	guessDups.resize(secretCode.size(), false);
 
+	vector<bool> matchingPositions;
+	matchingPositions.resize(secretCode.size(), false);
+
+	// Loops through to check where both the value and positions match, so those 
+	// places can be skipped during the incorrect checking
+	for (int i = 0; i < guessCode.size(); i++) {
+		for (int j = 0; j < guessCode.size(); j++)
+		{
+			if (secretCode[i] == guessCode[j] && i == j)
+			{
+				matchingPositions[i] = true;
+			}
+		}
+	}
+
+	// Nested for loop that loops through secret code values
 	for (int i = 0; i < guessCode.size(); i++) 
 	{
-		// For loop that loops through secret code values, assumes guess code is
-		// the same size as the secret code
+		// Skips cases if the value and position are matching
+		if (matchingPositions[i])
+		{
+			continue;
+		}
+
 		for (int j = 0; j < guessCode.size(); j++) 
 		{
 			// For loop that loops through guess code, compares all guess values
 			// against selected secret code value
 			if (secretCode[i] == guessCode[j] &&  i != j && !incorrectFlags[i] 
-				&& !guessDups[j])
+				&& !matchingPositions[j])
 			{
 				counterIncorrect++;
 				incorrectFlags[i] = true;
-				guessDups[j] = true;
 				break;
 			}
-			else if (secretCode[i] == guessCode[j] && i == j && 
-					 !incorrectFlags[i] && !guessDups[j]) 
-			{
-				incorrectFlags[i] = true;
-				guessDups[j] = true;
-				break;
-			} // end if
 		} // end for
 	} // end for
 
@@ -165,14 +176,11 @@ void code::setGuess(vector<int> guess)
 	{
 		secretCode[i] = guess[i];
 	}
-
-	cout << endl;
 } // end setGuess
 
 void code::printCode()
 // Print code by looping through it
 {
-
 	for (int i = 0; i < codeLength; i++) 
 	{
 		cout << secretCode[i];
