@@ -11,8 +11,8 @@
 using namespace std;
 
 // Declares the code class
-class code {
-
+class code 
+{
 // Public member prototype functions
 public:
 	// Constructors

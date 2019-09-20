@@ -7,6 +7,7 @@
 // Includes header files and libraries
 #include <stdlib.h>
 #include "code.h"
+#include "mastermind.h"
 #include <iostream>
 #include <ctime>
 #include <vector>
@@ -57,7 +58,9 @@ void run()
 int main() 
 // Main function that calls the run function and seeds the random function
 {
-	srand(time(NULL));
-	run();
+	mastermind game;
+	game.gameSetter();
+
+	//run();
 	return 0;
 }
