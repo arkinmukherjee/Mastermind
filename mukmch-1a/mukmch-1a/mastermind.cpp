@@ -13,6 +13,21 @@
 // Standard namespace
 using namespace std;
 
+void mastermind::playGame()
+{
+
+}
 
 
+code mastermind::humanGuess()
+{
+	code guess(codeLength, maxValue);
+	string strGuess;
 
+	cout << "Please enter a " << codeLength << "-digit number for your guess: ";
+	cin >> strGuess;
+
+	guess.setGuess(strGuess);
+
+	return guess;
+}

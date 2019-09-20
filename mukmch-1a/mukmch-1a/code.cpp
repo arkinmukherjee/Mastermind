@@ -172,10 +172,18 @@ void code::setGuess(vector<int> guess)
 // Output: none 
 // Sets the value of the guess in the code object
 {
-	codeLength = guess.size();
-	secretCode.resize(codeLength);
-
 	for (int i = 0; i < codeLength; i++) 
+	{
+		secretCode[i] = guess[i];
+	}
+} // end setGuess
+
+void code::setGuess(string guess)
+// Input: string containing guess
+// Output: none 
+// Sets the value of the guess in the code object
+{
+	for (int i = 0; i < codeLength; i++)
 	{
 		secretCode[i] = guess[i];
 	}

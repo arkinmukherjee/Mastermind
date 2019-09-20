@@ -30,6 +30,7 @@ public:
 	
 	// Functions for setting private members
 	void setGuess(vector<int> guess);
+	void setGuess(string guess);
 
 // Private member prototype functions and variables
 private:
