@@ -28,8 +28,18 @@ code::code(vector<int> guess)
 // Input: vector of integers for a guess
 // Constructor that initializes the code object with a guess
 {
-	maxValue = 0; // Set default value
+	maxValue = 10; // Set default value
 	setGuess(guess);
+} // end code
+
+
+code::code()
+// Constructor that initializes default values for the code
+{
+	codeLength = 5;
+	maxValue = 10;
+	secretCode.resize(codeLength);
+	initRandom();
 } // end code
 
 

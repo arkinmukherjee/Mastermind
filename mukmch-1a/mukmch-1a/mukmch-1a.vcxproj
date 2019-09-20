@@ -20,10 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="code.h" />
+    <ClInclude Include="mastermind.h" />
+    <ClInclude Include="response.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="code.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mastermind.cpp" />
+    <ClCompile Include="response.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

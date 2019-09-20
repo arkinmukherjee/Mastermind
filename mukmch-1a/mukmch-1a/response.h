@@ -9,7 +9,7 @@ class response
 // Establishes class for storing response values from guess codes
 {
 	public:
-		response(code& secret, code& guess);
+		response(code &secret, code &guess) { this->secret = secret; this->guess = guess; };
 		void setCorrect() { numCorrect = secret.checkCorrect(guess); };
 		void setIncorrect() { numIncorrect = secret.checkIncorrect(guess); };
 		int getCorrect() { return numIncorrect; };

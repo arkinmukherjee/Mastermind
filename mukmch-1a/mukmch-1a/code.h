@@ -18,6 +18,7 @@ public:
 	// Constructors
 	code(const int& n, const int &m);
 	code(vector<int> guess);
+	code();
 
 	// Functions to compare codes
 	const int checkCorrect(const code &guess);
