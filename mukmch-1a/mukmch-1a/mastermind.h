@@ -4,6 +4,7 @@
 // Project 1b
 
 // Libraries
+#include "code.h"
 #include <vector>
 
 // Standard namespace
@@ -15,6 +16,7 @@ class mastermind
 		mastermind(int &n, int &m) { codeLength = n; maxValue = m; };
 		mastermind() { codeLength = 5; maxValue = 10; };
 		void playGame();
+		code humanGuess();
 	private:
 		int codeLength;
 		int maxValue;
