@@ -12,7 +12,11 @@ using namespace std;
 class mastermind 
 {
 	public:
-		void gameSetter();
+		mastermind(int &n, int &m) { codeLength = n; maxValue = m; };
+		mastermind() { codeLength = 5; maxValue = 10; };
+		void playGame();
 	private:
+		int codeLength;
+		int maxValue;
 
 };

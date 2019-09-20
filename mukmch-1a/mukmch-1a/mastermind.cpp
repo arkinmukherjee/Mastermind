@@ -13,27 +13,6 @@
 // Standard namespace
 using namespace std;
 
-void mastermind::gameSetter()
-{
-	int n, m;
-	char setGame;
 
-	srand(time(NULL));
-	cout << "Would you like to set up the game? (Y/N): ";
-	cin >> setGame;
-	setGame = toupper(setGame);
 
-	if (setGame)
-	{
-		cout << "Enter the code length: ";
-		cin >> n;
-		cout << "Enter the range of digit: ";
-		cin >> m;
-		code Key(n, m);
-	}
-	else
-	{
-		code Key(5, 10);
-	}
-}
 

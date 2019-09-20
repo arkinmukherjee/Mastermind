@@ -15,6 +15,31 @@
 // Standard namespace
 using namespace std;
 
+void gameSetter()
+{
+	int n, m;
+	char setGame;
+
+	srand(time(NULL));
+	cout << "Would you like to set up the game? (Y/N): ";
+	cin >> setGame;
+	setGame = toupper(setGame);
+
+	if (setGame)
+	{
+		cout << "Enter the code length: ";
+		cin >> n;
+		cout << "Enter the range of digit: ";
+		cin >> m;
+		mastermind game(n, m);
+	}
+	else
+	{
+		mastermind game();
+	}
+}
+
+
 void run()
 // Hardcodes the guesses and calls all the necessary functions to run the game
 {
@@ -58,8 +83,7 @@ void run()
 int main() 
 // Main function that calls the run function and seeds the random function
 {
-	mastermind game;
-	game.gameSetter();
+	gameSetter();
 
 	//run();
 	return 0;
