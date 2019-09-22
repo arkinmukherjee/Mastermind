@@ -1,7 +1,7 @@
 // main.cpp
 // Author: Blake McHale and Arkin Mukherjee
 // Date: 9/18/2019
-// Project 1a
+// Project 1b
 // Main file of Mastermind game
 
 // Includes header files and libraries
@@ -95,8 +95,6 @@ int main()
 		mastermind game;
 		game.playGame();
 	}
-
-	;
 
 	return 0;
 }

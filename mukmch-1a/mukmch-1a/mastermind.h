@@ -15,10 +15,12 @@ class mastermind
 	public:
 		mastermind(int& n, int& m) { codeLength = n; maxValue = m; };
 		mastermind() { codeLength = 5; maxValue = 10; };
-		void playGame();
 		code humanGuess();
+		void playGame();
+		bool isSolved();
 	private:
 		int codeLength;
 		int maxValue;
+		int guessCount = 0;
 
 };

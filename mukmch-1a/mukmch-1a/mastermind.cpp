@@ -15,7 +15,16 @@ using namespace std;
 
 void mastermind::playGame()
 {
-
+	code Key(codeLength, maxValue);
+	cout << "Secret code: ";
+	Key.printCode();
+	
+	while ((guessCount <= 10) && (!isSolved()))
+	{
+		code guess(codeLength, maxValue);
+		guess = humanGuess();
+	}
+		
 }
 
 
