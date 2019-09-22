@@ -13,7 +13,7 @@ using namespace std;
 class mastermind 
 {
 	public:
-		mastermind(int &n, int &m) { codeLength = n; maxValue = m; };
+		mastermind(int& n, int& m) { codeLength = n; maxValue = m; };
 		mastermind() { codeLength = 5; maxValue = 10; };
 		void playGame();
 		code humanGuess();
