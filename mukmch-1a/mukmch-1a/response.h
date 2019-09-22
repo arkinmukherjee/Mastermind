@@ -10,11 +10,11 @@ class response
 {
 	public:
 		response(code &secret, code &guess);
+		response();
 		void setCorrect() { numCorrect = secret.checkCorrect(guess); };
 		void setIncorrect() { numIncorrect = secret.checkIncorrect(guess); };
 		int getCorrect() { return numIncorrect; };
 		int getIncorrect() { return numCorrect; };
-		code getSecret() {};
 
 	private:
 		int numCorrect;
