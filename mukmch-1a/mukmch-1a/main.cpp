@@ -78,23 +78,33 @@ void run()
 int main() 
 // Main function that calls the run function and seeds the random function
 {
-	int n, m;
-	bool setGame = gameSetter();
+	char playAgain= 'Y';
+	
+	while (playAgain == 'Y')
+	{
+		int n, m;
+		bool setGame = gameSetter();
 
-	if (setGame)
-	{
-		cout << "Enter the code length: ";
-		cin >> n;
-		cout << "Enter the range of digit: ";
-		cin >> m;
-		mastermind game(n, m);
-		game.playGame();
+		if (setGame)
+		{
+			cout << "Enter the code length: ";
+			cin >> n;
+			cout << "Enter the range of digit: ";
+			cin >> m;
+			mastermind game(n, m);
+			game.playGame();
+		}
+		else
+		{
+			mastermind game;
+			game.playGame();
+		}
+
+		cout << "Would you like to play again? (Y/N): ";
+		cin >> playAgain;
+		playAgain = toupper(playAgain);
 	}
-	else
-	{
-		mastermind game;
-		game.playGame();
-	}
+	
 
 	return 0;
 }
