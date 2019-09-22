@@ -46,10 +46,14 @@ code mastermind::humanGuess()
 
 bool mastermind::isSolved(response& resp)
 {
-
+	if (codeLength = resp.getCorrect())
+	{
+		return true;
+	}
 }
 
 response mastermind::getResponse(code& secret, code& guess)
 {
-
+	response resp(secret, guess);
+	return resp;
 }
