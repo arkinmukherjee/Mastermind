@@ -5,6 +5,7 @@
 
 // Libraries
 #include "code.h"
+#include "response.h"
 #include <vector>
 
 // Standard namespace
@@ -15,12 +16,13 @@ class mastermind
 	public:
 		mastermind(int& n, int& m) { codeLength = n; maxValue = m; };
 		mastermind() { codeLength = 5; maxValue = 10; };
-		code humanGuess();
 		void playGame();
-		bool isSolved();
+		code humanGuess();
+
+		bool isSolved(response& resp);
+		response getResponse(code& secret, code& guess);
 	private:
 		int codeLength;
 		int maxValue;
-		int guessCount = 0;
 
 };

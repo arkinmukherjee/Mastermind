@@ -6,12 +6,14 @@
 // Libraries and header files
 #include "mastermind.h"
 #include "code.h"
+#include "response.h"
 #include <vector>
 #include <iostream>
 #include <ctime>
 
 // Standard namespace
 using namespace std;
+
 
 void mastermind::playGame()
 {
@@ -39,4 +41,15 @@ code mastermind::humanGuess()
 	guess.setGuess(strGuess);
 
 	return guess;
+}
+
+
+bool mastermind::isSolved(response& resp)
+{
+
+}
+
+response mastermind::getResponse(code& secret, code& guess)
+{
+
 }
