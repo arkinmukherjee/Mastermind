@@ -25,8 +25,18 @@ void mastermind::playGame()
 	{
 		code guess(codeLength, maxValue);
 		guess = humanGuess();
+		guessCount++;
 	}
-		
+
+	if (isSolved())
+	{
+		cout << "You won in " << guessCount << " guesses!";
+	}
+	else
+	{
+		cout << "You ran out of guesses :(";
+	}
+
 }
 
 
