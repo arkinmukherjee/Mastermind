@@ -56,7 +56,7 @@ void code::initRandom()
 } // end initRandom
 
 
-const int code::checkCorrect(const code &guess) 
+const int code::checkCorrect(const code& guess) 
 // Input: const code object by reference for guess to compare to
 // Output: integer of # of correct values
 // Checks the number of values in the guess match with the secret code and in 
@@ -79,7 +79,7 @@ const int code::checkCorrect(const code &guess)
 } // end checkCorrect
 
 
-const int code::checkIncorrect(const code &guess) 
+const int code::checkIncorrect(const code& guess) 
 // Input: const code object by reference for guess to compare to
 // Output: integer of # of incorrect values
 // Checks the number of values in the guess match with the secret code but are 
@@ -144,7 +144,7 @@ const int code::checkIncorrect(const code &guess)
 } // end checkIncorrect
 
 
-const bool code::checkSize(const int &guessSize) 
+const bool code::checkSize(const int& guessSize) 
 // Input: const int by reference of the guess size
 // Output: boolean 
 // Checks if the length of the guess matches the length of the secret code
@@ -160,7 +160,7 @@ const bool code::checkSize(const int &guessSize)
 } // end checkSize
 
 
-const bool code::checkRange(const int &val1) 
+const bool code::checkRange(const int& val1) 
 // Input: const int by reference of a value in the guess
 // Output: boolean value representing if the guess is within the same range as 
 // the code generated
