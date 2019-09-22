@@ -96,7 +96,5 @@ int main()
 		game.playGame();
 	}
 
-	;
-
 	return 0;
 }

@@ -14,6 +14,7 @@ class response
 		void setIncorrect() { numIncorrect = secret.checkIncorrect(guess); };
 		int getCorrect() { return numIncorrect; };
 		int getIncorrect() { return numCorrect; };
+		code getSecret() {};
 
 	private:
 		int numCorrect;
