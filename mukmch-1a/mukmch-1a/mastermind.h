@@ -25,5 +25,6 @@ class mastermind
 		int codeLength;
 		int maxValue;
 		int guessCount = 0;
+		response localResponse;
 
 };

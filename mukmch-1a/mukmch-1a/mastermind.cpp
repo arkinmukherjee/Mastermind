@@ -21,14 +21,14 @@ void mastermind::playGame()
 	cout << "Secret code: ";
 	Key.printCode();
 	
-	while ((guessCount <= 10) && (!isSolved()))
+	while ((guessCount <= 10) && (!isSolved(localResponse)))
 	{
 		code guess(codeLength, maxValue);
 		guess = humanGuess();
 		guessCount++;
 	}
 
-	if (isSolved())
+	if (isSolved(localResponse))
 	{
 		cout << "You won in " << guessCount << " guesses!";
 	}
