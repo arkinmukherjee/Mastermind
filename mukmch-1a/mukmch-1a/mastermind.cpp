@@ -62,8 +62,8 @@ bool mastermind::isSolved(response& resp)
 response mastermind::getResponse(code& secret, code& guess)
 {
 	response resp;
-	resp.setCorrect(1);
-	resp.setIncorrect(5);
+	resp.setCorrect(secret.checkCorrect(guess));
+	resp.setIncorrect(secret.checkIncorrect(guess));
 	return resp;
 }
 
