@@ -53,8 +53,6 @@ code mastermind::humanGuess()
 	return guess;
 }
 
-// TODO: fix 4 errors generated here
-
 bool mastermind::isSolved(response& resp)
 {
 	if (codeLength = resp.getCorrect())
