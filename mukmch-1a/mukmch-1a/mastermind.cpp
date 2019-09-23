@@ -16,7 +16,6 @@ using namespace std;
 
 void mastermind::playGame()
 {
-	
 	code Key(codeLength, maxValue);
 	cout << "Secret code: ";
 	Key.printCode();
@@ -36,7 +35,6 @@ void mastermind::playGame()
 	{
 		cout << "You ran out of guesses :(";
 	}
-	
 }
 
 
