@@ -6,7 +6,7 @@
 
 // Includes header files and libraries
 #include <stdlib.h>
-#include "code.h"
+//#include "code.h"
 #include "mastermind.h"
 #include <iostream>
 #include <ctime>

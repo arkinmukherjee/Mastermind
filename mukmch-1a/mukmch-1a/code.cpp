@@ -197,7 +197,7 @@ void code::setGuess(string guess)
 {
 	for (int i = 0; i < codeLength; i++)
 	{
-		secretCode[i] = guess[i];
+		secretCode[i] = guess[i] - '0';
 	}
 } // end setGuess
 
