@@ -3,6 +3,10 @@
 // Date: 9/20/2019
 // Project 1b
 
+
+#ifndef MASTERMIND_H
+#define MASTERMIND_H 
+
 // Libraries
 #include "code.h"
 #include "response.h"
@@ -28,3 +32,5 @@ class mastermind
 		response localResponse;
 
 };
+
+#endif // !MASTERMIND_H

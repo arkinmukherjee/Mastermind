@@ -3,6 +3,9 @@
 // Date: 9/20/2019
 // Project 1b
 
+#ifndef RESPONSE_H
+#define RESPONSE_H
+
 #include "code.h"
 
 class response
@@ -23,3 +26,5 @@ class response
 		code *guess;
 
 };
+
+#endif // !RESPONSE_H
