@@ -3,6 +3,8 @@
 // Date: 9/20/2019
 // Project 1b
 
+#ifndef RESPONSE_H
+#define RESPONSE_H
 
 class response
 // Establishes class for storing response values from guess codes
@@ -19,3 +21,5 @@ class response
 		int numIncorrect;
 
 };
+
+#endif
