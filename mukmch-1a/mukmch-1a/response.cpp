@@ -10,18 +10,10 @@
 using namespace std;
 
 
-response::response(code& secret, code& guess)
-{
-	*this->secret = secret;
-	*this->guess = guess;
-	numCorrect = getCorrect();
-	numIncorrect = getIncorrect();
-}
-
-
 response::response()
 {
-
+	numCorrect = 0;
+	numIncorrect = 0;
 }
 
 
