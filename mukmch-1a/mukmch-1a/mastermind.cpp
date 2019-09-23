@@ -14,10 +14,8 @@
 // Standard namespace
 using namespace std;
 
-// TODO: 23 errors total in this file
 void mastermind::playGame()
 {
-	// TODO: fix 17 errors from build here
 	
 	code Key(codeLength, maxValue);
 	cout << "Secret code: ";
@@ -32,7 +30,7 @@ void mastermind::playGame()
 
 	if (isSolved(localResponse))
 	{
-		cout << "You won in " << guessCount << " guesses!";
+		cout << "You won in " << guessCount << " guesses!\n";
 	}
 	else
 	{
@@ -44,7 +42,6 @@ void mastermind::playGame()
 
 code mastermind::humanGuess()
 {
-	// TODO: fix 2 build errors
 	code guess(codeLength, maxValue);
 	string strGuess;
 

@@ -14,8 +14,6 @@
 // Standard namespace
 using namespace std;
 
-
-// TODO: fix 4 errors in entire file
 bool gameSetter()
 {
 	char setGame;
