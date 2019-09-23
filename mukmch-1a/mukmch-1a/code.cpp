@@ -12,6 +12,8 @@
 // Standard namespace
 using namespace std;
 
+// TODO: fix 7 errors in file
+
 code::code(const int& n, const int& m) 
 // Input: const integer by reference for code length, const integer by reference
 // for range of digits
