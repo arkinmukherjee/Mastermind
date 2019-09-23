@@ -6,7 +6,6 @@
 
 // Includes header files and libraries
 #include <stdlib.h>
-#include "code.h"
 #include "mastermind.h"
 #include <iostream>
 #include <ctime>
@@ -15,7 +14,7 @@
 // Standard namespace
 using namespace std;
 
-/*
+
 // TODO: fix 4 errors in entire file
 bool gameSetter()
 {
@@ -110,4 +109,3 @@ int main()
 
 	return 0;
 }
-*/

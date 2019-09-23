@@ -13,7 +13,7 @@
 
 // Standard namespace
 using namespace std;
-/*
+
 // TODO: 23 errors total in this file
 void mastermind::playGame()
 {
@@ -68,8 +68,9 @@ bool mastermind::isSolved(response& resp)
 
 response mastermind::getResponse(code& secret, code& guess)
 {
-	response resp(secret, guess);
+	response resp;
+	resp.setCorrect(1);
+	resp.setIncorrect(5);
 	return resp;
 }
 
-*/

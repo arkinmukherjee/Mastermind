@@ -6,8 +6,8 @@
 // Project 1a
 // Header file for the declaration of the code class
 
-#ifndef CODE_H
-#define CODE_H
+//#ifndef CODE_H
+//#define CODE_H
 
 // Libraries
 #include <vector>
@@ -53,4 +53,4 @@ class code
 		int maxValue;
 }; // end code class
 
-#endif
+//#endif

@@ -3,28 +3,19 @@
 // Date: 9/20/2019
 // Project 1b
 
-#ifndef RESPONSE_H
-#define RESPONSE_H
-
-#include "code.h"
 
 class response
 // Establishes class for storing response values from guess codes
 {
 	public:
-		response(code& secret, code& guess);
 		response();
-		void setCorrect() { numCorrect = (*secret).checkCorrect(*guess); };
-		void setIncorrect() { numIncorrect = (*secret).checkIncorrect(*guess); };
+		void setCorrect(int correct) { numCorrect = correct; };
+		void setIncorrect(int incorrect) { numIncorrect = incorrect; };
 		int getCorrect() { return numIncorrect; };
 		int getIncorrect() { return numCorrect; };
 
 	private:
 		int numCorrect;
 		int numIncorrect;
-		code *secret;
-		code *guess;
 
 };
-
-#endif // !RESPONSE_H
