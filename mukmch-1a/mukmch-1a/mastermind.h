@@ -4,8 +4,8 @@
 // Project 1b
 
 
-//#ifndef MASTERMIND_H
-//#define MASTERMIND_H 
+#ifndef MASTERMIND_H
+#define MASTERMIND_H 
 
 // Libraries
 #include "code.h"
@@ -33,4 +33,4 @@ class mastermind
 
 };
 
-//#endif // !MASTERMIND_H
+#endif // !MASTERMIND_H
