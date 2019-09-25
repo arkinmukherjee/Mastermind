@@ -33,7 +33,14 @@ void mastermind::playGame()
 
 	if (isSolved(localResponse))
 	{
-		cout << "You won in " << guessCount << " guesses!\n";
+		if (guessCount == 1) 
+		{
+			cout << "You won in " << guessCount << " guess!\n";
+		}
+		else
+		{
+			cout << "You won in " << guessCount << " guesses!\n";
+		}
 	}
 	else
 	{
