@@ -15,6 +15,7 @@
 using namespace std;
 
 bool gameSetter()
+//
 {
 	char setGame;
 

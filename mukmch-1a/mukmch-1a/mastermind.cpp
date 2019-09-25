@@ -14,16 +14,20 @@
 // Standard namespace
 using namespace std;
 
+
 void mastermind::playGame()
+//
 {
 	code Key(codeLength, maxValue);
 	cout << "Secret code: ";
 	Key.printCode();
 	
-	while ((guessCount <= 10) && (!isSolved(localResponse)))
+	while ((guessCount < 10) && (!isSolved(localResponse)))
 	{
 		code guess(codeLength, maxValue);
 		guess = humanGuess();
+		localResponse = getResponse(Key, guess);
+		cout << localResponse;
 		guessCount++;
 	}
 
@@ -33,12 +37,13 @@ void mastermind::playGame()
 	}
 	else
 	{
-		cout << "You ran out of guesses :(";
+		cout << "You ran out of guesses :(\n";
 	}
 }
 
 
 code mastermind::humanGuess()
+//
 {
 	code guess(codeLength, maxValue);
 	string strGuess;
@@ -51,15 +56,23 @@ code mastermind::humanGuess()
 	return guess;
 }
 
+
 bool mastermind::isSolved(response& resp)
+//
 {
-	if (codeLength = resp.getCorrect())
+	if (codeLength == resp.getCorrect())
 	{
 		return true;
 	}
+	else
+	{
+		return false;
+	}
 }
 
+
 response mastermind::getResponse(code& secret, code& guess)
+//
 {
 	response resp;
 	resp.setCorrect(secret.checkCorrect(guess));

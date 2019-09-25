@@ -5,7 +5,6 @@
 
 #include "response.h"
 #include <stdlib.h>
-#include <iostream>
 
 using namespace std;
 
@@ -17,18 +16,20 @@ response::response()
 }
 
 
-bool operator == (response& lhresponse, response& rhresponse)
+bool operator==(const response& lhresponse, const response& rhresponse)
 // Inputs: left hand response obj and right hand response object of ==
 // Output: boolean value that is true when the correct and 
 {
-	if (lhresponse.getCorrect() == rhresponse.getCorrect() && lhresponse.getIncorrect() == rhresponse.getIncorrect()) 
+	if (lhresponse.numCorrect == rhresponse.numCorrect && lhresponse.numIncorrect == rhresponse.numIncorrect) 
 	{
 		return true;
 	}
 }
 
 
-ostream& operator << (ostream& ostr, response& responseObj)
+ostream& operator<<(ostream& ostr, const response& responseObj)
+//
 {
-	return ostr << "Correct: " << responseObj.getCorrect() << "Incorrect: " << responseObj.getIncorrect() << endl;
+	ostr << "Correct: " << responseObj.numCorrect << "\nIncorrect: " << responseObj.numIncorrect << endl;
+	return ostr;
 }
