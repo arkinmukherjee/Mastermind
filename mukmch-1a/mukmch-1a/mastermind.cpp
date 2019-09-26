@@ -1,6 +1,4 @@
-// mastermind.cpp
-// Author: Blake McHale and Arkin Mukherjee
-// Date: 9/26/2019
+// mastermind.cpp Author: Blake McHale and Arkin Mukherjee Date: 9/26/2019
 // Project 1b
 
 // Header file
@@ -10,14 +8,15 @@
 using namespace std;
 
 void mastermind::playGame()
-// Initializes game loop and asks user for guesses as inputs. Also, maintains 
+// Initializes game loop and asks user for guesses as inputs. Also, maintains
 // and checks game logic.
 {
 	code Key(codeLength, maxValue);
 	cout << "Secret code: ";
 	Key.printCode();
 	
-	// Loop through the game until either the user runs out of guesses or the code is solved
+	// Loop through the game until either the user runs out of guesses or the
+	// code is solved
 	while ((guessCount < 10) && (!isSolved(localResponse)))
 	{
 		code guess(codeLength, maxValue);
@@ -31,16 +30,16 @@ void mastermind::playGame()
 	{
 		if (guessCount == 1) 
 		{
-			cout << "You won in " << guessCount << " guess!\n";
+			cout << "\n\nYou won in " << guessCount << " guess!\n";
 		}
 		else
 		{
-			cout << "You won in " << guessCount << " guesses!\n";
+			cout << "\n\nYou won in " << guessCount << " guesses!\n";
 		}
 	}
 	else
 	{
-		cout << "You ran out of guesses :(\n";
+		cout << "\n\nYou ran out of guesses :(\n";
 	}
 }
 
@@ -50,9 +49,36 @@ code mastermind::humanGuess()
 {
 	code guess(codeLength, maxValue);
 	string strGuess;
+	
+	regex valRange("[\\[" + to_string(maxValue) + "-9]");
 
-	cout << "Please enter a " << codeLength << "-digit number for your guess: ";
-	cin >> strGuess;
+	cout << "\nPlease enter a " << codeLength << 
+			"-digit number with the digits in the range 0-" + 
+			to_string(maxValue - 1) + " for your guess: ";
+
+	// Loop through and get guess from player until it's a valid input
+	while (cin >> strGuess)
+	{
+		// Check for length and range of code
+		if (strGuess.length() != codeLength)
+		{
+			cout << "Invalid length for code. ";
+		}
+		if (regex_search(strGuess, valRange))
+		{
+			cout << "Invalid range for guess. ";
+		}
+
+		// Stop getting guesses when valid code
+		if (strGuess.length() == codeLength && 
+			!regex_search(strGuess, valRange))
+		{
+			break;
+		}
+		cout << "\n\nPlease enter a " << codeLength << 
+			"-digit number with the digits in the range 0-" + 
+			to_string(maxValue - 1) + " for your guess: ";
+	}
 
 	// Converts string to integer values and stores it in guess object
 	guess.setGuess(strGuess);
@@ -62,10 +88,9 @@ code mastermind::humanGuess()
 
 
 bool mastermind::isSolved(response& resp)
-// Inputs: response object to be checked if the code is solved
-// Output: boolean value representing if the game is solved
-// Read a response and check if the # correct matches the length of the secret code,
-// if so, the code is solved
+// Inputs: response object to be checked if the code is solved Output: boolean
+// value representing if the game is solved Read a response and check if the #
+// correct matches the length of the secret code, if so, the code is solved
 {
 	if (codeLength == resp.getCorrect())
 	{
@@ -79,9 +104,9 @@ bool mastermind::isSolved(response& resp)
 
 
 response mastermind::getResponse(code& secret, code& guess)
-// Inputs: secret code object and guess code object
-// Output: response object with correct and incorrect values
-// Reads secret code and guess code, then evaluates guess code values against secret
+// Inputs: secret code object and guess code object Output: response object with
+// correct and incorrect values Reads secret code and guess code, then evaluates
+// guess code values against secret
 {
 	response resp;
 	resp.setCorrect(secret.checkCorrect(guess));

@@ -32,7 +32,7 @@ bool gameSetter()
 	}
 	else
 	{
-		cout << "\nThe code length will be 5 and the digit range will be 0-9.\n";
+		cout << "\nThe code length is 5 and the digit range is 0-9.\n";
 		return false;
 	}
 }

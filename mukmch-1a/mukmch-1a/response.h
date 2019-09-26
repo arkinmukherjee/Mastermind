@@ -28,7 +28,8 @@ class response
 		int getIncorrect() { return numIncorrect; };
 
 		// Overloaded operators
-		friend bool operator==(const response& lhresponse, const response& rhresponse);
+		friend bool operator==(const response& lhresponse, 
+			const response& rhresponse);
 		friend ostream& operator<<(ostream& ostr, const response& responseObj);
 
 	private:

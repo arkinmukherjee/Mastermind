@@ -16,6 +16,7 @@
 #include <iostream>
 #include <ctime>
 #include <string>
+#include <regex>
 
 // Standard namespace
 using namespace std;
