@@ -3,14 +3,19 @@
 // Date: 9/20/2019
 // Project 1b
 
-
+// Header guard
 #ifndef MASTERMIND_H
 #define MASTERMIND_H 
 
-// Libraries
+// Header files
 #include "code.h"
 #include "response.h"
+
+// Libraries
 #include <vector>
+#include <iostream>
+#include <ctime>
+#include <string>
 
 // Standard namespace
 using namespace std;

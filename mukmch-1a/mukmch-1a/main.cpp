@@ -4,9 +4,11 @@
 // Project 1b
 // Main file of Mastermind game
 
-// Includes header files and libraries
+// Header files
 #include <stdlib.h>
 #include "mastermind.h"
+
+// Libraries
 #include <iostream>
 #include <ctime>
 #include <vector>
@@ -15,7 +17,7 @@
 using namespace std;
 
 bool gameSetter()
-//asks the user if they would like to set up the game
+// Asks the user if they would like to set up the game
 {
 	char setGame;
 
@@ -30,6 +32,7 @@ bool gameSetter()
 	}
 	else
 	{
+		cout << "\nThe code length will be 5 and the digit range will be 0-9.\n";
 		return false;
 	}
 }
@@ -40,13 +43,13 @@ int main()
 {
 	char playAgain= 'Y';
 	
-	//while loop for the play again functionality
+	// While loop for the play again functionality
 	while (playAgain == 'Y')
 	{
 		int n, m;
 		bool setGame = gameSetter();
 
-		//Initializes and starts the game
+		// Initializes and starts the game
 		if (setGame)
 		{
 			cout << "Enter the code length: ";

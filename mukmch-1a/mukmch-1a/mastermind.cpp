@@ -3,21 +3,15 @@
 // Date: 9/20/2019
 // Project 1b
 
-// Libraries and header files
+// Header file
 #include "mastermind.h"
-
-#include <vector>
-#include <iostream>
-#include <ctime>
-#include <string>
 
 // Standard namespace
 using namespace std;
 
-
 void mastermind::playGame()
-// Initializes game loop and asks user for guesses as inputs. Also, maintains and checks
-// game logic.
+// Initializes game loop and asks user for guesses as inputs. Also, maintains 
+// and checks game logic.
 {
 	code Key(codeLength, maxValue);
 	cout << "Secret code: ";

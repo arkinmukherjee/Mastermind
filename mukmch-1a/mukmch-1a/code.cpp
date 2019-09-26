@@ -4,10 +4,8 @@
 // Project 1a
 // This file contains the function implementations that are declared in code.h
 
-// Includes header files and libraries
+// Header files
 #include "code.h"
-#include <vector>
-#include <iostream>
 
 // Standard namespace
 using namespace std;

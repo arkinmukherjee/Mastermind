@@ -3,11 +3,10 @@
 // Date: 9/20/2019
 // Project 1b
 
+// Header files
 #include "response.h"
-#include <stdlib.h>
 
 using namespace std;
-
 
 response::response()
 // Constructor that sets default values for correct and incorrect

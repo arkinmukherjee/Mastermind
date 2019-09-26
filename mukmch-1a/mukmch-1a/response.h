@@ -3,9 +3,11 @@
 // Date: 9/20/2019
 // Project 1b
 
+// Header guard
 #ifndef RESPONSE_H
 #define RESPONSE_H
 
+// Library 
 #include <iostream>
 
 using namespace std;
