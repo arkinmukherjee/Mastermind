@@ -23,6 +23,7 @@ void mastermind::playGame()
 	cout << "Secret code: ";
 	Key.printCode();
 	
+	// Loop through the game until either the user runs out of guesses or the code is solved
 	while ((guessCount < 10) && (!isSolved(localResponse)))
 	{
 		code guess(codeLength, maxValue);
@@ -59,6 +60,7 @@ code mastermind::humanGuess()
 	cout << "Please enter a " << codeLength << "-digit number for your guess: ";
 	cin >> strGuess;
 
+	// Converts string to integer values and stores it in guess object
 	guess.setGuess(strGuess);
 
 	return guess;
@@ -68,7 +70,8 @@ code mastermind::humanGuess()
 bool mastermind::isSolved(response& resp)
 // Inputs: response object to be checked if the code is solved
 // Output: boolean value representing if the game is solved
-// Read a response and check if the # correct matches the length of the secret code
+// Read a response and check if the # correct matches the length of the secret code,
+// if so, the code is solved
 {
 	if (codeLength == resp.getCorrect())
 	{
