@@ -15,7 +15,7 @@
 using namespace std;
 
 bool gameSetter()
-//
+//asks the user if they would like to set up the game
 {
 	char setGame;
 
@@ -40,11 +40,13 @@ int main()
 {
 	char playAgain= 'Y';
 	
+	//while loop for the play again functionality
 	while (playAgain == 'Y')
 	{
 		int n, m;
 		bool setGame = gameSetter();
 
+		//Initializes and starts the game
 		if (setGame)
 		{
 			cout << "Enter the code length: ";
