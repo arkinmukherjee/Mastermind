@@ -1,6 +1,6 @@
 // main.cpp
 // Author: Blake McHale and Arkin Mukherjee
-// Date: 9/18/2019
+// Date: 9/26/2019
 // Project 1b
 // Main file of Mastermind game
 
