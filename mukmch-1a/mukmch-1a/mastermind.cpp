@@ -13,9 +13,9 @@ void mastermind::playGame()
 {
 	code Key(codeLength, maxValue);
 	
-	cout << "Secret code: ";
-	Key.printCode();
-	cout << endl;
+	//cout << "Secret code: ";
+	//Key.printCode();
+	//cout << endl;
 	
 	// Loop through the game until either the user runs out of guesses or the
 	// code is solved
@@ -94,7 +94,8 @@ code mastermind::humanGuess()
 		}
 		cout << "\n\nPlease enter a " << codeLength << 
 			"-digit number with the digits in the range 0-" + 
-			to_string(maxValue - 1) + " for your guess: ";
+			to_string(maxValue - 1) + " for your guess #" << guessCount + 1 <<
+			": ";
 	} // end while
 
 	// Converts string to integer values and stores it in guess object
