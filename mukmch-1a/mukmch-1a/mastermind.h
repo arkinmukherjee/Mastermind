@@ -43,6 +43,6 @@ class mastermind
 
 		// Variable to store responses guesses
 		response localResponse;
-};
+}; // end mastermind class
 
 #endif // !MASTERMIND_H

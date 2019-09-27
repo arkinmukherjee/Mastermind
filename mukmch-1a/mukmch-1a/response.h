@@ -37,6 +37,6 @@ class response
 		int numCorrect;
 		int numIncorrect;
 
-};
+}; // end response class
 
 #endif

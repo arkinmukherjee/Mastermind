@@ -5,13 +5,10 @@
 // Main file of Mastermind game
 
 // Header files
-#include <stdlib.h>
 #include "mastermind.h"
 
 // Libraries
-#include <iostream>
 #include <ctime>
-#include <vector>
 
 // Standard namespace
 using namespace std;
@@ -35,7 +32,7 @@ bool gameSetter()
 		cout << "\nThe code length is 5 and the digit range is 0-9.\n";
 		return false;
 	}
-}
+} // end gameSetter
 
 
 int main() 
@@ -60,8 +57,11 @@ int main()
 					cout << "Enter the code length: ";
 					cin.exceptions(istream::failbit);
 					cin >> n;
+
+					// Handle cin overflow error
 					cin.clear();
 					cin.ignore (numeric_limits<streamsize>::max(), '\n');
+
 					if (n <= 0)
 					{
 						cout << "Invalid code length. Must be greater than 0."
@@ -76,7 +76,7 @@ int main()
 					cin.clear();
 					cin.ignore (numeric_limits<streamsize>::max(), '\n');
 				}	
-			}
+			} // end while
 
 			// Keep looping until valid range
 			while (true)
@@ -100,7 +100,7 @@ int main()
 					cin.clear();
 					cin.ignore (numeric_limits<streamsize>::max(), '\n');
 				}	
-			}
+			} // end while
 
 			mastermind game(n, m);
 			game.playGame();
@@ -119,4 +119,4 @@ int main()
 	cout << "\nThanks for playing!\n";
 	
 	return 0;
-}
+} // end main

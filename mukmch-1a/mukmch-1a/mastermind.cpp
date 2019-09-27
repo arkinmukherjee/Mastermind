@@ -26,6 +26,7 @@ void mastermind::playGame()
 		guessCount++;
 	}
 
+	// Checks if game is solved or the guess count is too high
 	if (isSolved(localResponse))
 	{
 		if (guessCount == 1) 
@@ -41,7 +42,7 @@ void mastermind::playGame()
 	{
 		cout << "\nYou ran out of guesses :(\n";
 	}
-}
+} // end playGame
 
 
 code mastermind::humanGuess()
@@ -88,13 +89,13 @@ code mastermind::humanGuess()
 		cout << "\n\nPlease enter a " << codeLength << 
 			"-digit number with the digits in the range 0-" + 
 			to_string(maxValue - 1) + " for your guess: ";
-	}
+	} // end while
 
 	// Converts string to integer values and stores it in guess object
 	guess.setGuess(strGuess);
 
 	return guess;
-}
+} // end humanGuess
 
 
 bool mastermind::isSolved(response& resp)
@@ -110,7 +111,7 @@ bool mastermind::isSolved(response& resp)
 	{
 		return false;
 	}
-}
+} // end isSolved
 
 
 response mastermind::getResponse(code& secret, code& guess)
@@ -122,5 +123,5 @@ response mastermind::getResponse(code& secret, code& guess)
 	resp.setCorrect(secret.checkCorrect(guess));
 	resp.setIncorrect(secret.checkIncorrect(guess));
 	return resp;
-}
+} // end getResponse
 

@@ -13,7 +13,7 @@ response::response()
 {
 	numCorrect = 0;
 	numIncorrect = 0;
-}
+} // end response
 
 
 bool operator==(const response& lhresponse, const response& rhresponse)
@@ -27,7 +27,7 @@ bool operator==(const response& lhresponse, const response& rhresponse)
 	{
 		return true;
 	}
-}
+} // end operator==
 
 
 ostream& operator<<(ostream& ostr, const response& responseObj)
@@ -39,4 +39,4 @@ ostream& operator<<(ostream& ostr, const response& responseObj)
 	ostr << "Correct: " << responseObj.numCorrect << "\nIncorrect: " << 
 		responseObj.numIncorrect;
 	return ostr;
-}
+} // end operator<<
