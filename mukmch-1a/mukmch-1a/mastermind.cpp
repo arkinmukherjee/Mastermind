@@ -22,7 +22,7 @@ void mastermind::playGame()
 		code guess(codeLength, maxValue);
 		guess = humanGuess();
 		localResponse = getResponse(Key, guess);
-		cout << localResponse;
+		cout << localResponse << endl;
 		guessCount++;
 	}
 
@@ -30,16 +30,16 @@ void mastermind::playGame()
 	{
 		if (guessCount == 1) 
 		{
-			cout << "\n\nYou won in " << guessCount << " guess!\n";
+			cout << "\nYou won in " << guessCount << " guess!\n";
 		}
 		else
 		{
-			cout << "\n\nYou won in " << guessCount << " guesses!\n";
+			cout << "\nYou won in " << guessCount << " guesses!\n";
 		}
 	}
 	else
 	{
-		cout << "\n\nYou ran out of guesses :(\n";
+		cout << "\nYou ran out of guesses :(\n";
 	}
 }
 
@@ -51,6 +51,7 @@ code mastermind::humanGuess()
 	string strGuess;
 	
 	regex valRange("[\\[" + to_string(maxValue) + "-9]");
+	regex charRange("[[:digit:]]");
 
 	cout << "\nPlease enter a " << codeLength << 
 			"-digit number with the digits in the range 0-" + 
@@ -59,19 +60,28 @@ code mastermind::humanGuess()
 	// Loop through and get guess from player until it's a valid input
 	while (cin >> strGuess)
 	{
+		// Error check cin
+		cin.clear();
+		cin.ignore (numeric_limits<streamsize>::max(), '\n');
+
 		// Check for length and range of code
 		if (strGuess.length() != codeLength)
 		{
-			cout << "Invalid length for code. ";
+			cout << "Invalid length for guess. ";
 		}
-		if (regex_search(strGuess, valRange))
+		if (regex_search(strGuess, valRange) && maxValue != 10)
 		{
 			cout << "Invalid range for guess. ";
+		}
+		if (strGuess.find_first_not_of("0123456789") != std::string::npos)
+		{
+			cout << "Invalid characters in guess. ";
 		}
 
 		// Stop getting guesses when valid code
 		if (strGuess.length() == codeLength && 
-			!regex_search(strGuess, valRange))
+			(!regex_search(strGuess, valRange) || maxValue == 10) &&
+			strGuess.find_first_not_of("0123456789") == std::string::npos)
 		{
 			break;
 		}

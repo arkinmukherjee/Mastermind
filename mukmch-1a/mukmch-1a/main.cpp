@@ -51,11 +51,57 @@ int main()
 
 		// Initializes and starts the game
 		if (setGame)
-		{
-			cout << "Enter the code length: ";
-			cin >> n;
-			cout << "Enter the range of digit: ";
-			cin >> m;
+		{	
+			// Keep looping until valid code length
+			while (true)
+			{
+				try
+				{
+					cout << "Enter the code length: ";
+					cin.exceptions(istream::failbit);
+					cin >> n;
+					cin.clear();
+					cin.ignore (numeric_limits<streamsize>::max(), '\n');
+					if (n <= 0)
+					{
+						cout << "Invalid code length. Must be greater than 0."
+							<< endl;
+						continue;
+					}
+					break;
+				}
+				catch (const ios::failure&)
+				{
+					cout << "Invalid code length. \n";
+					cin.clear();
+					cin.ignore (numeric_limits<streamsize>::max(), '\n');
+				}	
+			}
+
+			// Keep looping until valid range
+			while (true)
+			{
+				try
+				{
+					cout << "Enter the range of digits (1-10): ";
+					cin >> m;
+					cin.clear();
+					cin.ignore (numeric_limits<streamsize>::max(), '\n');
+					if (m > 10 || m <= 1)
+					{
+						cout << "Invalid range. Must be between 1-10. \n";
+						continue;
+					}
+					break;
+				}
+				catch (const ios::failure&)
+				{
+					cout << "Invalid range. \n";
+					cin.clear();
+					cin.ignore (numeric_limits<streamsize>::max(), '\n');
+				}	
+			}
+
 			mastermind game(n, m);
 			game.playGame();
 		}
