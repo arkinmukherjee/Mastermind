@@ -12,8 +12,10 @@ void mastermind::playGame()
 // and checks game logic.
 {
 	code Key(codeLength, maxValue);
+	
 	cout << "Secret code: ";
 	Key.printCode();
+	cout << endl;
 	
 	// Loop through the game until either the user runs out of guesses or the
 	// code is solved
@@ -24,6 +26,7 @@ void mastermind::playGame()
 		localResponse = getResponse(Key, guess);
 		cout << localResponse << endl;
 		guessCount++;
+		
 	}
 
 	// Checks if game is solved or the guess count is too high
@@ -31,16 +34,18 @@ void mastermind::playGame()
 	{
 		if (guessCount == 1) 
 		{
-			cout << "\nYou won in " << guessCount << " guess!\n";
+			cout << "\nYou won in " << guessCount << " guess!\n\n";
 		}
 		else
 		{
-			cout << "\nYou won in " << guessCount << " guesses!\n";
+			cout << "\nYou won in " << guessCount << " guesses!\n\n";
 		}
 	}
 	else
 	{
-		cout << "\nYou ran out of guesses :(\n";
+		cout << "The answer was ";
+		Key.printCode();
+		cout << ".\n\n";
 	}
 } // end playGame
 
@@ -56,7 +61,8 @@ code mastermind::humanGuess()
 
 	cout << "\nPlease enter a " << codeLength << 
 			"-digit number with the digits in the range 0-" + 
-			to_string(maxValue - 1) + " for your guess: ";
+			to_string(maxValue - 1) + " for your guess #" << guessCount +1 <<
+			": ";
 
 	// Loop through and get guess from player until it's a valid input
 	while (cin >> strGuess)

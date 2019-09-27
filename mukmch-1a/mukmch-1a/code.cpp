@@ -207,5 +207,4 @@ void code::printCode()
 	{
 		cout << secretCode[i];
 	}
-	cout << endl;
 } // end printCode
